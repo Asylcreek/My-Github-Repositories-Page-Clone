@@ -468,6 +468,7 @@ body {
 .repo__desc {
     color: var(--color-text-secondary);
     margin: -1rem 0 2rem;
+    width: 55%;
 }
 
 .repo__bottom {

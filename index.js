@@ -30,10 +30,10 @@ document.addEventListener(
 
 //Define all necessary axios data
 const githubUrl = "https://api.github.com/graphql";
-const token = "15e60df72484e25eea3c38ed0a2e89ecc4db9467";
-const oAuth = { Authorization: `bearer ${token}` };
+const token = "f0683470b00651a3fa087488611b99e1e79ae02a";
+const oAuth = { Authorization: `Bearer ${token}` };
 const query =
-    "{viewer {repositories(ownerAffiliations: OWNER last: 20 orderBy: { field: UPDATED_AT, direction: ASC }) {edges {node {id,name,isPrivate,forkCount,primaryLanguage {name},updatedAt}}}}}";
+    '{repositoryOwner(login:"Asylcreek"){repositories(ownerAffiliations: OWNER last: 20 orderBy: { field: UPDATED_AT, direction: ASC }) {edges {node {id,name,description,isPrivate,forkCount,primaryLanguage {name},updatedAt}}}}}';
 
 //This functions returns a color based on the value given
 const getLanguageColor = (language) => {
@@ -136,7 +136,7 @@ const getData = async () => {
     console.log(err);
   }
 
-  const repos = response.data.data.viewer.repositories.edges;
+  const repos = response.data.data.repositoryOwner.repositories.edges;
 
   //Reverse the list because the latest repo is the last
   repos.reverse();
