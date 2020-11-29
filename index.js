@@ -30,7 +30,7 @@ document.addEventListener(
 
 //Define all necessary axios data
 const githubUrl = "https://api.github.com/graphql";
-const token = "f0683470b00651a3fa087488611b99e1e79ae02a";
+const token = "YOUR_ACCESS_TOKEN";
 const oAuth = { Authorization: `Bearer ${token}` };
 const query =
     '{repositoryOwner(login:"Asylcreek"){repositories(ownerAffiliations: OWNER last: 20 orderBy: { field: UPDATED_AT, direction: ASC }) {edges {node {id,name,description,isPrivate,forkCount,primaryLanguage {name},updatedAt}}}}}';
