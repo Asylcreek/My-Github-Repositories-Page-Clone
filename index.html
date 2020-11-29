@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Your Repositories</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__left u-flex-y-center">
+            <div class="hamburger"></div>
+
+            <img src="./github-logo.png" alt="Github" class="header__logo" />
+
+            <form action="#" class="header__form">
+                <input type="text" name="search" id="search" placeholder="Search or jump to..." />
+                <svg class="icon header__search__icon">
+            <use xlink:href="./sprite.svg#icon-search-key-slash"></use>
+          </svg>
+            </form>
+
+            <div class="header__left__links u-flex-y-center">
+                <p class="header__left__link">Pull requests</p>
+                <p class="header__left__link">Issues</p>
+                <p class="header__left__link">Marketplace</p>
+                <p class="header__left__link">Explore</p>
+            </div>
+        </div>
+
+        <div class="header__right u-flex-x-y-center">
+            <div class="header__right__item-container u-flex-x-y-center">
+                <svg class="icon">
+            <use xlink:href="./sprite.svg#icon-bell-o"></use>
+          </svg>
+                <span class="header__right__notification-icon"></span>
+            </div>
+
+            <div class="header__right__item-container u-flex-x-y-center">
+                <svg class="icon">
+            <use xlink:href="./sprite.svg#icon-plus"></use>
+          </svg>
+                <svg class="icon icon--negative-ml">
+            <use xlink:href="./sprite.svg#icon-arrow_drop_down"></use>
+          </svg>
+            </div>
+
+            <div class="header__right__item-container u-flex-x-y-center">
+                <img class="header__right__user-photo" src="./top-user-photo.jfif" alt="User" />
+                <svg class="icon icon--negative-ml">
+            <use xlink:href="./sprite.svg#icon-arrow_drop_down"></use>
+          </svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="sticky-nav u-flex-y-center">
+            <div class="sticky-nav__user u-flex-y-center">
+                <img src="./sidebar-user-photo.jfif" alt="User" class="sticky-nav__img" />
+                <span>Asylcreek</span>
+            </div>
+            <ul class="sticky-nav__container u-flex-y-center">
+                <li class="sticky-nav__item u-flex-x-y-center">
+                    <svg class="icon icon--nav">
+              <use xlink:href="./sprite.svg#icon-book-open"></use>
+            </svg>
+                    <span>Overview</span>
+                </li>
+
+                <li class="sticky-nav__item sticky-nav__item--active u-flex-x-y-center">
+                    <svg class="icon icon--nav">
+              <use xlink:href="./sprite.svg#icon-repo"></use>
+            </svg>
+                    <span>Repositories</span>
+                    <span class="sticky-nav__item__counter">45</span>
+                </li>
+
+                <li class="sticky-nav__item u-flex-x-y-center">
+                    <svg class="icon icon--nav icon--inverted">
+              <use xlink:href="./sprite.svg#icon-insert_chart_outlined"></use>
+            </svg>
+                    <span>Projects</span>
+                    <span class="sticky-nav__item__counter sticky-nav__item__counter--rounded">1</span
+            >
+          </li>
+
+          <li class="sticky-nav__item u-flex-x-y-center">
+            <svg class="icon icon--nav">
+              <use xlink:href="./sprite.svg#icon-box"></use></svg
+            ><span>Packages</span>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="sidebar">
+                <div class="sidebar__img-container">
+                    <img src="./sidebar-user-photo.jfif" alt="User" class="sidebar__img" />
+
+                    <div class="sidebar__emoji-container u-flex-x-y-center">
+                        <svg class="icon icon--grey sidebar__emoji">
+                <use xlink:href="./sprite.svg#icon-emoji-happy"></use>
+              </svg>
+                    </div>
+                </div>
+
+                <div class="sidebar__name-container">
+                    <h2 class="sidebar__name">Boro Omokugbo Joseph</h2>
+
+                    <p class="sidebar__username">Asylcreek</p>
+                </div>
+
+                <p class="sidebar__desc">
+                    Technology Enthusiast. Whimsical Audiophile. Language Enthusiast
+                </p>
+            </div>
+
+            <!-- This sticky nav bar is here to prevent doing verbose magics with the first one-->
+            <nav class="sticky-nav-inner u-flex-y-center">
+                <ul class="sticky-nav__container u-flex-y-center">
+                    <li class="sticky-nav__item u-flex-x-y-center">
+                        <svg class="icon icon--nav">
+                <use xlink:href="./sprite.svg#icon-book-open"></use>
+              </svg>
+                        <span>Overview</span>
+                    </li>
+
+                    <li class="sticky-nav__item sticky-nav__item--active u-flex-x-y-center">
+                        <svg class="icon icon--nav">
+                <use xlink:href="./sprite.svg#icon-repo"></use>
+              </svg>
+                        <span>Repositories</span>
+                        <span class="sticky-nav__item__counter">45</span>
+                    </li>
+
+                    <li class="sticky-nav__item u-flex-x-y-center">
+                        <svg class="icon icon--nav icon--inverted">
+                <use xlink:href="./sprite.svg#icon-insert_chart_outlined"></use>
+              </svg>
+                        <span>Projects</span>
+                        <span class="sticky-nav__item__counter sticky-nav__item__counter--rounded">1</span
+              >
+            </li>
+
+            <li class="sticky-nav__item u-flex-x-y-center">
+              <svg class="icon icon--nav">
+                <use xlink:href="./sprite.svg#icon-box"></use></svg
+              ><span>Packages</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="repos">
+                <form action="#" class="repos__form">
+                    <input type="text" name="repo-search" id="repo-search" placeholder="Find a repository..." />
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
